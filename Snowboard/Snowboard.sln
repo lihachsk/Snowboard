@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowboard.Domain", "Snowboard.Domain\Snowboard.Domain.csproj", "{4DB178B0-02D2-47AD-BB26-8FDDDA5944A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowboard.WebUI", "Snowboard.WebUI\Snowboard.WebUI.csproj", "{37DD537A-912F-46DE-9D27-D6BFE958270B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Snowboard.Tests", "Snowboard.Tests\Snowboard.Tests.csproj", "{8E92E1E2-DDB7-4DEB-9B97-2BE2D6514491}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4DB178B0-02D2-47AD-BB26-8FDDDA5944A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DB178B0-02D2-47AD-BB26-8FDDDA5944A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DB178B0-02D2-47AD-BB26-8FDDDA5944A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DB178B0-02D2-47AD-BB26-8FDDDA5944A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37DD537A-912F-46DE-9D27-D6BFE958270B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37DD537A-912F-46DE-9D27-D6BFE958270B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37DD537A-912F-46DE-9D27-D6BFE958270B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37DD537A-912F-46DE-9D27-D6BFE958270B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E92E1E2-DDB7-4DEB-9B97-2BE2D6514491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E92E1E2-DDB7-4DEB-9B97-2BE2D6514491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E92E1E2-DDB7-4DEB-9B97-2BE2D6514491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E92E1E2-DDB7-4DEB-9B97-2BE2D6514491}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
