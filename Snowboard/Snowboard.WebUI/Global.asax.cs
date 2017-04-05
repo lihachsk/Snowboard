@@ -11,6 +11,7 @@ namespace Snowboard.WebUI
     {
         protected void Application_Start()
         {
+            //DependencyResolver.SetResolver(new Snowboard.WebUI.Infrastructure.NinjectDependencyResolver());
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
