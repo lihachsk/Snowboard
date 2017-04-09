@@ -10,23 +10,21 @@ namespace Snowboard.Domain.Concrete
 {
     public class Root : IRoot
     {
-        private ISnowboardContext context { get; set; }
         public Root(
-             ISnowboardContext _context
-            ,IRepository<Role> _Roles
-            ,IRepository<Entities.Snowboard> _Snowboards
-            ,IRepository<User> _Users
+             IRepository<Role> _Role
+            ,IRepository<Entities.Snowboard> _Snowboard
+            ,IRepository<User> _User
             )
         {
-            context = _context;
-            Roles = _Roles;
-            Snowboards = _Snowboards;
-            Users = _Users;
+            Role = _Role;
+            Snowboard = _Snowboard;
+            User = _User;
         }
-        public IRepository<Role> Roles { get; set; }
 
-        public IRepository<Entities.Snowboard> Snowboards { get; set; }
+        public IRepository<Role> Role { get; set; }
 
-        public IRepository<User> Users { get; set; }
+        public IRepository<Entities.Snowboard> Snowboard { get; set; }
+
+        public IRepository<User> User { get; set; }
     }
 }

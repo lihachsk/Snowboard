@@ -10,6 +10,11 @@ namespace Snowboard.Domain.Concrete
 {
     public class RepositoryRole : IRepository<Role>
     {
+        private ISnowboardContext context { get; set; }
+        public RepositoryRole(ISnowboardContext _context)
+        {
+            context = _context;
+        }
         public void Create(Role item)
         {
             throw new NotImplementedException();

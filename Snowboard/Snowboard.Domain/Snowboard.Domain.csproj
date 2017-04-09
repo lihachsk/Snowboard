@@ -64,6 +64,7 @@
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Snowboard.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Entities\UserInRole.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

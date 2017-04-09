@@ -9,8 +9,8 @@ namespace Snowboard.Domain.Abstract
 {
     public interface IRoot
     {
-        IRepository<Entities.Snowboard> Snowboards { get; set; }
-        IRepository<User> Users { get; set; }
-        IRepository<Role> Roles { get; set; }
+        IRepository<Entities.Snowboard> Snowboard { get; set; }
+        IRepository<User> User { get; set; }
+        IRepository<Role> Role { get; set; }
     }
 }

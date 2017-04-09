@@ -11,8 +11,10 @@ namespace Snowboard.Domain.Concrete
 {
     public class SnowboardContext : DbContext, ISnowboardContext
     {
-        public DbSet<Entities.Snowboard> Snowboards { get; set; }
-        public DbSet<User> Users { get; set; }
-        public DbSet<Role> Roles { get; set; }
+        public DbSet<Entities.Snowboard> Snowboard { get; set; }
+        public DbSet<User> User { get; set; }
+        public DbSet<Role> Role { get; set; }
+
+        public DbSet<UserInRole> UserInRole { get; set; }
     }
 }

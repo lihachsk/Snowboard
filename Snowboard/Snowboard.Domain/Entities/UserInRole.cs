@@ -6,17 +6,14 @@ using System.Threading.Tasks;
 
 namespace Snowboard.Domain.Entities
 {
-    public class Snowboard
+    public class UserInRole
     {
         public Guid Id { get; set; }
         public DateTime CreatedOn { get; set; }
         public Guid CreatedBy { get; set; }
         public DateTime ModifiedOn { get; set; }
         public Guid ModifiedBy { get; set; }
-        public string Name { get; set; }
-        public decimal Cost { get; set; }
-        public byte[] Picture { get; set; }
-        public int Number { get; set; }
+        public Guid UserId { get; set; }
+        public Guid RoleId { get; set; }
     }
-    //https://metanit.com/sharp/helpdeskmvc/2.1.php
 }

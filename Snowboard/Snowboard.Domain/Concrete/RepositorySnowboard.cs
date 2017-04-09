@@ -10,6 +10,11 @@ namespace Snowboard.Domain.Concrete
 {
     public class RepositorySnowboard : IRepository<Snowboard.Domain.Entities.Snowboard>
     {
+        private ISnowboardContext context { get; set; }
+        public RepositorySnowboard(ISnowboardContext _context)
+        {
+            context = _context;
+        }
         public void Create(Entities.Snowboard item)
         {
             throw new NotImplementedException();

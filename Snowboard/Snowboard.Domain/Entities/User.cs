@@ -10,6 +10,10 @@ namespace Snowboard.Domain.Entities
     public class User
     {
         public Guid Id { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public Guid CreatedBy { get; set; }
+        public DateTime ModifiedOn { get; set; }
+        public Guid ModifiedBy { get; set; }
         [Required]
         [Display(Name = "Имя")]
         [MaxLength(50, ErrorMessage = "Максимальная длинна имени 50 символов")]
