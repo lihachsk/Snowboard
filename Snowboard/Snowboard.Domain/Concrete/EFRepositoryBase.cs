@@ -50,13 +50,22 @@ namespace Snowboard.Domain.Concrete
             dbSet.Remove(item);
             context.SaveChanges();
         }
+        public void RemoveRange(IEnumerable<T> items)
+        {
+            foreach(var item in items)
+            {
+                context.Entry(item).State = EntityState.Deleted;
+            }
+            dbSet.RemoveRange(items);
+            context.SaveChanges();
+        }
         public bool Any(Func<T, bool> predicate)
         {
             return dbSet.Any<T>(predicate);
         }
         public void Dispose()
         {
-            context.Dispose(true);
+            context.Dispose();
         }
         private IQueryable<TResult> Join<TOuter, TInner, TKey, TResult>(IEnumerable<TInner> inner, Expression<Func<TOuter, TKey>> outerKeySelector, Expression<Func<TInner, TKey>> innerKeySelector, Expression<Func<TOuter, TInner, TResult>> resultSelector)
         {

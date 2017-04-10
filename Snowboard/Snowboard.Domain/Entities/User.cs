@@ -21,5 +21,10 @@ namespace Snowboard.Domain.Entities
         [Required]
         [Display(Name = "Телефон")]
         public int Phone { get; set; }
+        public virtual ICollection<Role> Roles { get; set; }
+        public User()
+        {
+            Roles = new List<Role>();
+        }
     }
 }

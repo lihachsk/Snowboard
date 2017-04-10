@@ -10,9 +10,7 @@ namespace Snowboard.Domain.Abstract
     public interface IRoot
     {
         IRepository<Entities.Snowboard> Snowboard { get; set; }
-        IRepository<User> User { get; set; }
-        IRepository<Role> Role { get; set; }
-        IUserInRole<UserInRole> UserInRole { get; set; }
-        IEnumerable<User> FindUsersInRole(Guid RoleId, string usernameToMatch);
+        IUser User { get; set; }
+        IRole Role { get; set; }
     }
 }

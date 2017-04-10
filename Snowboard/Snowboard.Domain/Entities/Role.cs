@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Snowboard.Domain.Entities
 {
@@ -14,5 +15,10 @@ namespace Snowboard.Domain.Entities
         public DateTime ModifiedOn { get; set; }
         public Guid ModifiedBy { get; set; }
         public string Name { get; set; }
+        public virtual ICollection<User> Users { get; set; }
+        public Role()
+        {
+            Users = new List<User>();
+        }
     }
 }

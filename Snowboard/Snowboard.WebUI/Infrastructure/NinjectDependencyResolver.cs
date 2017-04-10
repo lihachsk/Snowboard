@@ -32,11 +32,11 @@ namespace Snowboard.WebUI.Infrastructure
 
         private void AddBindings()
         {
-            kernel.Bind<IRoot>().To<Root>();
-            kernel.Bind<ISnowboardContext>().To<SnowboardContext>();
-            kernel.Bind<IRepositoryBase<Role>>().To<EFRepositoryBase<Role>>();
-            kernel.Bind<IRepositoryBase<Snowboard.Domain.Entities.Snowboard>>().To<EFRepositoryBase<Snowboard.Domain.Entities.Snowboard>>();
-            kernel.Bind<IRepositoryBase<User>>().To<EFRepositoryBase<User>>();
+            kernel.Bind<IRoot>().To<EFRoot>();
+            kernel.Bind<ISnowboardContext>().To<EFSnowboardContext>();
+            kernel.Bind<IRole>().To<EFRole>();
+            kernel.Bind<IRepository<Snowboard.Domain.Entities.Snowboard>>().To<EFRepository<Snowboard.Domain.Entities.Snowboard>>();
+            kernel.Bind<IUser>().To<EFUser>();
         }
     }
 }

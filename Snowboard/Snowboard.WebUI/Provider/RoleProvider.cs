@@ -25,46 +25,7 @@ namespace Snowboard.WebUI.Provider
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
-            IEnumerable<Guid> UserId = root.User.Get(x => usernames.Contains(x.Name)).Select(x => x.Id);
-            IEnumerable<Guid> RoleId = root.Role.Get(x => roleNames.Contains(x.Name)).Select(x => x.Id);
-            var result = AddUserToRoleById(UserId, RoleId);
-        }
-        public IEnumerable<Result> AddUserToRoleById(IEnumerable<Guid> UserId, IEnumerable<Guid> RoleId)
-        {
-            var Result = new List<Result>();
-            foreach (var user in UserId)
-            {
-                foreach (var role in RoleId)
-                {
-                    try
-                    {
-                        root.UserInRole.Add(new UserInRole()
-                        {
-                            CreatedOn = DateTime.UtcNow
-                            ,
-                            CreatedBy = User.Id
-                            ,
-                            ModifiedOn = DateTime.UtcNow
-                            ,
-                            ModifiedBy = User.Id
-                            ,
-                            UserId = user
-                            ,
-                            RoleId = role
-                        });
-                        Result.Add(new Result() { Success = true });
-                    }
-                    catch(Exception e)
-                    {
-                        Result.Add(new Result() {
-                            Success = false
-                            ,ErrorNumber = e.HResult
-                            ,MessageError = e.Message
-                        });
-                    }
-                }
-            }
-            return Result;
+            root.Role.AddUsersToRoles(usernames, roleNames);
         }
 
         public override void CreateRole(string roleName)
@@ -102,16 +63,7 @@ namespace Snowboard.WebUI.Provider
 
         public override string[] FindUsersInRole(string roleName, string usernameToMatch)
         {
-            throw new NotImplementedException();
-        }
-        public IEnumerable<User> FindUsersInRole(Guid RoleId, string usernameToMatch)
-        {
-            var user = root.UserInRole.Join(root.User, x => x.UserId, y => y.Id, (x, y) => new { UserInRole = x, User = y })
-                .Join(root.Role, z => z.UserInRole.RoleId, y => y.Id, (z, y) => new { UserInRole = z.UserInRole, User = z.User, Role = y })
-                .Where(x => x.Role.Id == RoleId && x.User.Name.Contains(usernameToMatch))
-                .Select(x => x.User)
-                .ToList();
-            return user;
+            return root.Role.FindUsersInRole(roleName, usernameToMatch);
         }
 
         public override string[] GetAllRoles()
@@ -121,27 +73,27 @@ namespace Snowboard.WebUI.Provider
 
         public override string[] GetRolesForUser(string username)
         {
-            throw new NotImplementedException();
+            return root.User.GetRolesForUser(username);
         }
 
         public override string[] GetUsersInRole(string roleName)
         {
-            throw new NotImplementedException();
+            return root.Role.GetUsersInRole(roleName);
         }
 
         public override bool IsUserInRole(string username, string roleName)
         {
-            throw new NotImplementedException();
+            return root.User.IsUserInRole(username, roleName);
         }
 
         public override void RemoveUsersFromRoles(string[] usernames, string[] roleNames)
         {
-            throw new NotImplementedException();
+            root.User.RemoveUsersFromRoles(usernames, roleNames);
         }
 
         public override bool RoleExists(string roleName)
         {
-            throw new NotImplementedException();
+            return root.Role.RoleExists(roleName);
         }
     }
 }

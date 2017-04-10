@@ -54,11 +54,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\IRole.cs" />
     <Compile Include="Abstract\ISnowboardContext.cs" />
     <Compile Include="Abstract\IRoot.cs" />
+    <Compile Include="Abstract\IUser.cs" />
+    <Compile Include="Concrete\EFRepository.cs" />
     <Compile Include="Concrete\EFRepositoryBase.cs" />
-    <Compile Include="Concrete\Root.cs" />
-    <Compile Include="Concrete\SnowboardContext.cs" />
+    <Compile Include="Concrete\EFRole.cs" />
+    <Compile Include="Concrete\EFUser.cs" />
+    <Compile Include="Concrete\EFRoot.cs" />
+    <Compile Include="Concrete\EFSnowboardContext.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\Snowboard.cs" />
     <Compile Include="Entities\User.cs" />

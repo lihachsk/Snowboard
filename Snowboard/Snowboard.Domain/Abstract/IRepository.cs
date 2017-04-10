@@ -17,6 +17,7 @@ namespace Snowboard.Domain.Abstract
         IQueryable<T> GetQ();
         bool Any(Func<T, bool> predicate);
         void Remove(T item);
+        void RemoveRange(IEnumerable<T> items);
         void Update(T item);
     }
 }
