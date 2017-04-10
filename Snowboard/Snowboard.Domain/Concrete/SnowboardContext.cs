@@ -16,5 +16,9 @@ namespace Snowboard.Domain.Concrete
         public DbSet<Role> Role { get; set; }
 
         public DbSet<UserInRole> UserInRole { get; set; }
+        public void sd()
+        {
+            
+        }
     }
 }

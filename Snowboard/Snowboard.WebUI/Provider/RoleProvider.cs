@@ -12,12 +12,12 @@ namespace Snowboard.WebUI.Provider
 {
     public class SNRoleProvider : RoleProvider
     {
-        private ISnowboardContext context { get; set; }
+        private IRoot root { get; set; }
         private User User { get; set; }
 
-        public SNRoleProvider(ISnowboardContext _context)
+        public SNRoleProvider(IRoot _root)
         {
-            context = _context;
+            root = _root;
             User = (User)HttpContext.Current.Session["User"];
             ApplicationName = ConfigurationManager.AppSettings["ApplicationName"].ToString();
         }
@@ -25,8 +25,8 @@ namespace Snowboard.WebUI.Provider
 
         public override void AddUsersToRoles(string[] usernames, string[] roleNames)
         {
-            IEnumerable<Guid> UserId = context.User.Where(x => usernames.Contains(x.Name)).Select(x => x.Id);
-            IEnumerable<Guid> RoleId = context.Role.Where(x => roleNames.Contains(x.Name)).Select(x => x.Id);
+            IEnumerable<Guid> UserId = root.User.Get(x => usernames.Contains(x.Name)).Select(x => x.Id);
+            IEnumerable<Guid> RoleId = root.Role.Get(x => roleNames.Contains(x.Name)).Select(x => x.Id);
             var result = AddUserToRoleById(UserId, RoleId);
         }
         public IEnumerable<Result> AddUserToRoleById(IEnumerable<Guid> UserId, IEnumerable<Guid> RoleId)
@@ -38,7 +38,7 @@ namespace Snowboard.WebUI.Provider
                 {
                     try
                     {
-                        context.UserInRole.Add(new UserInRole()
+                        root.UserInRole.Add(new UserInRole()
                         {
                             CreatedOn = DateTime.UtcNow
                             ,
@@ -52,7 +52,6 @@ namespace Snowboard.WebUI.Provider
                             ,
                             RoleId = role
                         });
-                        context.SaveChanges();
                         Result.Add(new Result() { Success = true });
                     }
                     catch(Exception e)
@@ -70,9 +69,9 @@ namespace Snowboard.WebUI.Provider
 
         public override void CreateRole(string roleName)
         {
-            if(!context.Role.Any(x => x.Name == roleName))
+            if(!root.Role.Any(x => x.Name == roleName))
             {
-                context.Role.Add(new Role()
+                root.Role.Add(new Role()
                 {
                     CreatedOn = DateTime.UtcNow
                     ,
@@ -84,16 +83,15 @@ namespace Snowboard.WebUI.Provider
                     ,
                     Name = roleName
                 });
-                context.SaveChanges();
             }
         }
 
         public override bool DeleteRole(string roleName, bool throwOnPopulatedRole)
         {
-            Role role = context.Role.Where(x => x.Name == roleName).FirstOrDefault();
+            Role role = root.Role.Get(x => x.Name == roleName).FirstOrDefault();
             if (role != null && role.Id != Guid.Empty)
             {
-                context.Role.Remove(role);
+                root.Role.Remove(role);
                 return true;
             }
             else
@@ -108,8 +106,8 @@ namespace Snowboard.WebUI.Provider
         }
         public IEnumerable<User> FindUsersInRole(Guid RoleId, string usernameToMatch)
         {
-            var user = context.UserInRole.Join(context.User, x => x.UserId, y => y.Id, (x, y) => new { UserInRole = x, User = y })
-                .Join(context.Role, z => z.UserInRole.RoleId, y => y.Id, (z, y) => new { UserInRole = z.UserInRole, User = z.User, Role = y })
+            var user = root.UserInRole.Join(root.User, x => x.UserId, y => y.Id, (x, y) => new { UserInRole = x, User = y })
+                .Join(root.Role, z => z.UserInRole.RoleId, y => y.Id, (z, y) => new { UserInRole = z.UserInRole, User = z.User, Role = y })
                 .Where(x => x.Role.Id == RoleId && x.User.Name.Contains(usernameToMatch))
                 .Select(x => x.User)
                 .ToList();
@@ -118,7 +116,7 @@ namespace Snowboard.WebUI.Provider
 
         public override string[] GetAllRoles()
         {
-            return context.Role.Select(x => x.Name).ToArray();
+            return root.Role.Get().Select(x => x.Name).ToArray();
         }
 
         public override string[] GetRolesForUser(string username)

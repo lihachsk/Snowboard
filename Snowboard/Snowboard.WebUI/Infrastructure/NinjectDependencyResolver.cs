@@ -34,9 +34,9 @@ namespace Snowboard.WebUI.Infrastructure
         {
             kernel.Bind<IRoot>().To<Root>();
             kernel.Bind<ISnowboardContext>().To<SnowboardContext>();
-            kernel.Bind<IRepository<Role>>().To<RepositoryRole>();
-            kernel.Bind<IRepository<Snowboard.Domain.Entities.Snowboard>>().To<RepositorySnowboard>();
-            kernel.Bind<IRepository<User>>().To<RepositoryUser>();
+            kernel.Bind<IRepositoryBase<Role>>().To<EFRepositoryBase<Role>>();
+            kernel.Bind<IRepositoryBase<Snowboard.Domain.Entities.Snowboard>>().To<EFRepositoryBase<Snowboard.Domain.Entities.Snowboard>>();
+            kernel.Bind<IRepositoryBase<User>>().To<EFRepositoryBase<User>>();
         }
     }
 }

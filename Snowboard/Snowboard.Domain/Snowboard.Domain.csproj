@@ -53,12 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\ISnowboardContext.cs" />
     <Compile Include="Abstract\IRepository.cs" />
+    <Compile Include="Abstract\ISnowboardContext.cs" />
     <Compile Include="Abstract\IRoot.cs" />
-    <Compile Include="Concrete\RepositoryRole.cs" />
-    <Compile Include="Concrete\RepositorySnowboard.cs" />
-    <Compile Include="Concrete\RepositoryUser.cs" />
+    <Compile Include="Concrete\EFRepositoryBase.cs" />
     <Compile Include="Concrete\Root.cs" />
     <Compile Include="Concrete\SnowboardContext.cs" />
     <Compile Include="Entities\Role.cs" />

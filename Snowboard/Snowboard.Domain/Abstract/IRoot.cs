@@ -12,5 +12,7 @@ namespace Snowboard.Domain.Abstract
         IRepository<Entities.Snowboard> Snowboard { get; set; }
         IRepository<User> User { get; set; }
         IRepository<Role> Role { get; set; }
+        IUserInRole<UserInRole> UserInRole { get; set; }
+        IEnumerable<User> FindUsersInRole(Guid RoleId, string usernameToMatch);
     }
 }
