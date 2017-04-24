@@ -7,5 +7,6 @@ namespace Snowboard.Domain.Abstract
         string[] GetRolesForUser(string username);
         bool IsUserInRole(string username, string roleName);
         void RemoveUsersFromRoles(string[] usernames, string[] roleNames);
+        bool CheckPassword(string login, string password);
     }
 }

@@ -16,6 +16,11 @@ namespace Snowboard.Domain.Concrete
             context = _context;
         }
 
+        public bool CheckPassword(string login, string password)
+        {
+            return context.User.Any(x => x.Login == login && x.Password == password);
+        }
+
         public string[] GetRolesForUser(string username)
         {
             return context

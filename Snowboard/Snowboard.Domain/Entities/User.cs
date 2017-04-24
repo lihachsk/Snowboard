@@ -18,6 +18,8 @@ namespace Snowboard.Domain.Entities
         [Display(Name = "Имя")]
         [MaxLength(50, ErrorMessage = "Максимальная длинна имени 50 символов")]
         public string Name { get; set; }
+        public string Password { get; set; }
+        public string Login { get; set; }
         [Required]
         [Display(Name = "Телефон")]
         public int Phone { get; set; }

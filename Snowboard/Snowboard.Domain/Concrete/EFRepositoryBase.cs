@@ -67,10 +67,6 @@ namespace Snowboard.Domain.Concrete
         {
             context.Dispose();
         }
-        private IQueryable<TResult> Join<TOuter, TInner, TKey, TResult>(IEnumerable<TInner> inner, Expression<Func<TOuter, TKey>> outerKeySelector, Expression<Func<TInner, TKey>> innerKeySelector, Expression<Func<TOuter, TInner, TResult>> resultSelector)
-        {
-            return null;// dbSet.Join(inner, outerKeySelector, innerKeySelector, resultSelector);
-        }
 
     }
 }
