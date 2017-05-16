@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Snowboard.WebUI.Controllers
 {
+    [Authorize]
     public class MainController : Controller
     {
         private IRoot root;
