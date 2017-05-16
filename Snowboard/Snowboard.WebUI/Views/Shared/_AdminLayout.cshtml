@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/root.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div class="left-side">
+        <ul class="group-menu">
+            <li class="group-menu-item"><a href="#">Заголовок</a></li>
+            <li class="group-menu-item"><a href="#">Управление персоналом</a></li>
+            <li class="group-menu-item"><a href="#">Настройка контактов</a></li>
+            <li class="group-menu-item group-menu-item-active"><a href="#">Занавес</a></li>
+            <li class="group-menu-item"><a href="#">Прокрутка</a></li>
+            <li class="group-menu-item"><a href="#">Стопка</a></li>
+            <li class="group-menu-item"><a href="#">Паркетница</a></li>
+        </ul>
+    </div>
+    <div class="right-side">
+        @RenderBody()
+    </div>
+</body>
+</html>
