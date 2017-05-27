@@ -1,0 +1,130 @@
+﻿/*---------------------------------------Display---------------------------------------*/
+@font-face {
+    font-family: 'SFUIDisplay-Black';
+    src: url('../fonts/SF-Display/SFUIDisplay-Black.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Bold.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Heavy.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Light.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Medium.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Regular.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Semibold.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Thin.otf') format('opentype'), url('../fonts/SF-Display/SFUIDisplay-Ultralight.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Bold';
+    src: url('../fonts/SF-Display/SFUIDisplay-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Heavy';
+    src: url('../fonts/SF-Display/SFUIDisplay-Heavy.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Light';
+    src: url('../fonts/SF-Display/SFUIDisplay-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Medium';
+    src: url('../fonts/SF-Display/SFUIDisplay-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Regular';
+    src: url('../fonts/SF-Display/SFUIDisplay-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Semibold';
+    src: url('../fonts/SF-Display/SFUIDisplay-Semibold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Thin';
+    src: url('../fonts/SF-Display/SFUIDisplay-Thin.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIDisplay-Ultralight';
+    src: url('../fonts/SF-Display/SFUIDisplay-Ultralight.otf') format('opentype');
+}
+/*---------------------------------------TEXT---------------------------------------*/
+@font-face {
+    font-family: 'SFUIText-Bold';
+    src: url('../fonts/SF-Text/SFUIText-Bold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldG1';
+    src: url('../fonts/SF-Text/SFUIText-BoldG1.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldG2';
+    src: url('../fonts/SF-Text/SFUIText-BoldG2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldG3';
+    src: url('../fonts/SF-Text/SFUIText-BoldG3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldItalicG1';
+    src: url('../fonts/SF-Text/SFUIText-BoldItalicG1.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldItalicG2';
+    src: url('../fonts/SF-Text/SFUIText-BoldItalicG2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-BoldItalicG3';
+    src: url('../fonts/SF-Text/SFUIText-BoldItalicG3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Heavy';
+    src: url('../fonts/SF-Text/SFUIText-Heavy.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-HeavyItalic';
+    src: url('../fonts/SF-Text/SFUIText-HeavyItalic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Italic';
+    src: url('../fonts/SF-Text/SFUIText-Italic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-ItalicG1';
+    src: url('../fonts/SF-Text/SFUIText-ItalicG1.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-ItalicG2';
+    src: url('../fonts/SF-Text/SFUIText-ItalicG2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-ItalicG3';
+    src: url('../fonts/SF-Text/SFUIText-ItalicG3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Light';
+    src: url('../fonts/SF-Text/SFUIText-Light.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-LightItalic';
+    src: url('../fonts/SF-Text/SFUIText-LightItalic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Medium';
+    src: url('../fonts/SF-Text/SFUIText-Medium.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-MediumItalic';
+    src: url('../fonts/SF-Text/SFUIText-MediumItalic.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Regular';
+    src: url('../fonts/SF-Text/SFUIText-Regular.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-RegularG1';
+    src: url('../fonts/SF-Text/SFUIText-RegularG1.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-RegularG2';
+    src: url('../fonts/SF-Text/SFUIText-RegularG2.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-RegularG3';
+    src: url('../fonts/SF-Text/SFUIText-RegularG3.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-Semibold';
+    src: url('../fonts/SF-Text/SFUIText-Semibold.otf') format('opentype');
+}
+@font-face {
+    font-family: 'SFUIText-SemiboldItalic';
+    src: url('../fonts/SF-Text/SFUIText-SemiboldItalic.otf') format('opentype');
+}

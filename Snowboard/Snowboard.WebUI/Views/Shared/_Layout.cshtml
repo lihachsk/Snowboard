@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="~/Content/fonts.css" rel="stylesheet" />
     <link href="~/Content/main.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
@@ -10,32 +10,53 @@
     <nav class="bar">
         <div class="bar-container">
             <ul class="menu">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Сноуборды</a></li>
-                <li><a href="#">Контакты</a></li>
-                <li><a href="#">Отзывы</a></li>
-                <li><a href="#">Поиск</a></li>
+                <li><a href="#">Mac</a></li>
+                <li><a href="#">iPad</a></li>
+                <li><a href="#">iPhone</a></li>
+                <li><a href="#">Watch</a></li>
+                <li><a href="#">TV</a></li>
+                <li><a href="#">Music</a></li>
+                <li><a href="#">Support</a></li>
             </ul>
         </div>
     </nav>
     <section class="main">
         <article class="content">
-            <h1 class="content-header">Lorem ipsum</h1>
-            <div class="content-text">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                euismod tincidunt ut laoreet dolore magna aliquam erat ...
-                <img class="content-img" src="~/img/snowboard.jpg" alt="Скидки на сноуборды" />
+            <div class="inner">
+                <div class="heading" role="heading">
+                    <span>Introducing</span>
+                    <h1>
+                        Today at Apple
+                    </h1>
+                </div>
+                <h2 class="content-header">Inspiration is now in session.</h2>
             </div>
         </article>
+        <div class="img">
+            <figure></figure>
+        </div>
     </section>
-    <footer class="section">
-        <section class="quadruple-section orange">
+    <section class="content">
+        <ul>
+            <li>
+                <a class="promo" href="#"></a>
+            </li>
+            <li>
+                <a class="promo" href="#"></a>
+            </li>
+            <li>
+                <a class="promo" href="#"></a>
+            </li>
+            <li>
+                <a class="promo" href="#"></a>
+            </li>
+        </ul>
+        @*<section class="quadruple-section orange">
             <div class="mountain">
             </div>
             <article>
                 <h2>
-                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                    euismod tincidunt ut laoreet dolore magna aliquam erat ...
+                    iPhone. This is 7.
                 </h2>
             </article>
         </section>
@@ -76,8 +97,8 @@
                 <li><a href="#">TW</a></li>
                 <li><a href="#">8(908)808-88-88</a></li>
             </ul>
-        </section>
-    </footer>
+        </section>*@
+    </section>
     @RenderBody()
 </body>
 </html>
